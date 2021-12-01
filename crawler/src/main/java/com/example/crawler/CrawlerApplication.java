@@ -1,12 +1,12 @@
-package com.minibcr.app;
+package com.example.crawler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication public class AppApplication {
+@SpringBootApplication public class CrawlerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppApplication.class, args);
+        SpringApplication.run(CrawlerApplication.class, args);
     }
 
 }
