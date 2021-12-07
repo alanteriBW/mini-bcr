@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.minibcr</groupId>
-    <artifactId>app</artifactId>
+    <artifactId>mini-bcr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>app</name>
@@ -48,6 +48,7 @@
 
     <modules>
         <module>api</module>
+        <module>crawler</module>
     </modules>
 
 </project>
