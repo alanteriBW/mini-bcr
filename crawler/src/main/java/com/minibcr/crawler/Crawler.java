@@ -24,7 +24,7 @@ public class Crawler {
 
     private static YcombinatorPostBuilder ycombinatorPostBuilder = new YcombinatorPostBuilder();
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 30000)
     public void run()  {
         Crawler crawler = new Crawler();
 
