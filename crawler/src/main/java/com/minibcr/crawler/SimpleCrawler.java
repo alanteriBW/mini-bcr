@@ -9,7 +9,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
@@ -50,13 +52,25 @@ public class SimpleCrawler {
         getPageLinks(URL, depth);
     }
 
-    public void getArticles() throws IOException {
+    public List<YcombinatorPost> getArticles() throws IOException {
         Document document = Jsoup.connect(URL).get();
-        Elements entries = document.select("tr.athing");
-        for(Element entry : entries){
-            System.out.println(entry);
+        Elements elements = document.select("tr.athing");
+        List<YcombinatorPost> ycombinatorPosts = new ArrayList<>();
+        for(Element element : elements){
+            ycombinatorPosts.add(ycombinatorPostBuilder(element));
         }
 
+        return ycombinatorPosts;
+    }
+
+    public YcombinatorPost ycombinatorPostBuilder(Element element){
+        YcombinatorPost post = new YcombinatorPost();
+        post.setId(element.attr("id"));
+        post.setLink(element.childNode(4).childNode(0).attr("href"));
+        post.setRank(Integer.parseInt(element.childNode(1).childNode(0).childNode(0).toString().replaceAll(".$","")));
+        post.setTitle(element.childNode(4).childNode(0).childNode(0).toString());
+
+        return post;
     }
 
     public void getPageLinks(String url, int depth) {
