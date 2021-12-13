@@ -24,6 +24,7 @@ hs_err_pid*
 
 #intellij
 .idea/
+.DS_Store
 
 #mvn
 mvnw
@@ -35,3 +36,4 @@ api/mvnw.cmd
 mini-bcr.iml
 crawler/.mvn/
 api/.mvn/
+

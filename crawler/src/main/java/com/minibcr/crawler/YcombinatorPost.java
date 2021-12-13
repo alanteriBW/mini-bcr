@@ -58,5 +58,4 @@ public class YcombinatorPost {
         this.link = link;
     }
 
-
 }
