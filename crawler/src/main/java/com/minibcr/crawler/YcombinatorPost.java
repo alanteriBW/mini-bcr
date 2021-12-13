@@ -10,10 +10,12 @@ public class YcombinatorPost {
     public String link;
 
     @Override public boolean equals(Object o) {
-        if (this == o)
+        if (this == o) {
             return true;
-        if (!(o instanceof YcombinatorPost))
+        }
+        if (!(o instanceof YcombinatorPost)) {
             return false;
+        }
         YcombinatorPost entry = (YcombinatorPost) o;
         return getRank() == entry.getRank() && Objects.equals(getId(), entry.getId())
                 && Objects.equals(getTitle(), entry.getTitle()) && Objects.equals(getLink(),

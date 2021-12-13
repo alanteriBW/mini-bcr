@@ -5,7 +5,7 @@ import org.jsoup.nodes.Element;
 public class YcombinatorPostBuilder {
 
 
-    public YcombinatorPost build(Element element){
+    public YcombinatorPost build(Element element) {
         YcombinatorPost post = new YcombinatorPost();
 
         post.setId(element.attr("id"));

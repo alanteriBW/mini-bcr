@@ -1,5 +1,9 @@
 package com.minibcr.crawler;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,10 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @EnableScheduling
@@ -29,7 +29,7 @@ public class Crawler {
         Crawler crawler = new Crawler();
 
         try {
-            for(YcombinatorPost post : crawler.getArticles()){
+            for (YcombinatorPost post : crawler.getArticles()) {
                 System.out.println("-----------");
                 System.out.println("Title: " + post.getTitle());
                 System.out.println("Link: " + post.getLink());
@@ -42,13 +42,13 @@ public class Crawler {
     public List<YcombinatorPost> getArticles() throws IOException {
         List<YcombinatorPost> ycombinatorPosts = new ArrayList<>();
 
-        if(disallowed(URL)){
+        if (disallowed(URL)) {
             System.out.println("This url is disallowed: " + URL);
         }
 
         Document document = Jsoup.connect(URL).get();
         Elements elements = document.select("tr.athing");
-        for(Element element : elements){
+        for (Element element : elements) {
             ycombinatorPosts.add(ycombinatorPostBuilder.build(element));
         }
 
@@ -56,10 +56,11 @@ public class Crawler {
     }
 
     private boolean disallowed(String url) {
-        for(String disallowedUrl : DISALLOWED)
-            if(url.contains(disallowedUrl)){
+        for (String disallowedUrl : DISALLOWED) {
+            if (url.contains(disallowedUrl)) {
                 return true;
             }
+        }
 
         return false;
     }

@@ -24,3 +24,14 @@ hs_err_pid*
 
 #intellij
 .idea/
+
+#mvn
+mvnw
+mvnw.cmd
+crawler/mvnw
+crawler/mvnw.cmd
+api/mvnw
+api/mvnw.cmd
+mini-bcr.iml
+crawler/.mvn/
+api/.mvn/
