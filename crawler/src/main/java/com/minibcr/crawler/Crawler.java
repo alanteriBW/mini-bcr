@@ -26,10 +26,9 @@ public class Crawler {
 
     @Scheduled(fixedRate = 30000)
     public void run() {
-        Crawler crawler = new Crawler();
 
         try {
-            for (YcombinatorPost post : crawler.getArticles()) {
+            for (YcombinatorPost post : getArticles()) {
                 System.out.println("-----------");
                 System.out.println("Title: " + post.getTitle());
                 System.out.println("Link: " + post.getLink());
