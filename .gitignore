@@ -31,9 +31,12 @@ mvnw
 mvnw.cmd
 crawler/mvnw
 crawler/mvnw.cmd
+crawler/crawler.iml
 api/mvnw
 api/mvnw.cmd
+api/api.iml
 mini-bcr.iml
 crawler/.mvn/
 api/.mvn/
+crawler/target/surefire-reports/TEST-com.minibcr.crawler.CrawlerApplicationTests.xml
 
