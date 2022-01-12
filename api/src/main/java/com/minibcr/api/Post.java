@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,15 +12,14 @@ import javax.persistence.Table;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    public String id;
+    public Long id;
     @Column(name = "title")
     public String title;
     @Column(name = "link")
     public String link;
 
-    public Post(String id, String title, String link) {
+    public Post(Long id, String title, String link) {
         this.id = id;
         this.title = title;
         this.link = link;
@@ -50,7 +47,7 @@ public class Post {
 
         StringBuilder builder = new StringBuilder();
 
-        builder.append(id);
+        builder.append(id.toString());
         builder.append(", ");
         builder.append(title);
         builder.append(", ");
@@ -65,10 +62,10 @@ public class Post {
     }
 
     public String getId() {
-        return id;
+        return id.toString();
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
