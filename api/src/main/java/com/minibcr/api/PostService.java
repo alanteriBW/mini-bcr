@@ -2,6 +2,8 @@ package com.minibcr.api;
 
 import java.util.List;
 
+import com.minibcr.commons.Post;
+
 public interface PostService {
 
     List<Post> findAllPeople();

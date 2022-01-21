@@ -1,4 +1,4 @@
-package com.minibcr.api;
+package com.minibcr.commons;
 
 import java.util.Objects;
 
@@ -19,27 +19,25 @@ public class Post {
     @Column(name = "link")
     public String link;
 
-    public Post(Long id, String title, String link) {
-        this.id = id;
-        this.title = title;
-        this.link = link;
-    }
-
     public Post() {
 
     }
 
-
-    @Override
-    public boolean equals(Object o) {
+    @Override public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
         if (!(o instanceof Post)) {
             return false;
         }
-        Post post = (Post) o;
-        return getId().equals(post.getId()) && Objects.equals(getTitle(), post.getTitle()) && Objects.equals(getLink(), post.getLink());
+        Post entry = (Post) o;
+        return  Objects.equals(getId(), entry.getId())
+                && Objects.equals(getTitle(), entry.getTitle()) && Objects.equals(getLink(),
+                entry.getLink());
+    }
+
+    @Override public int hashCode() {
+        return Objects.hash(getId(), getTitle(), getLink());
     }
 
     @Override
@@ -56,13 +54,8 @@ public class Post {
         return builder.toString();
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getTitle(), getLink());
-    }
-
-    public String getId() {
-        return id.toString();
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
@@ -84,4 +77,5 @@ public class Post {
     public void setLink(String link) {
         this.link = link;
     }
+
 }
