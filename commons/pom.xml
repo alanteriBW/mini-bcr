@@ -8,11 +8,8 @@
         <artifactId>mini-bcr</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.minibcr</groupId>
     <artifactId>commons</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>commons</name>
-    <description>Common library</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -45,14 +42,5 @@
         </dependency>
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

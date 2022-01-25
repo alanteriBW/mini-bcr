@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.minibcr.commons.Post;
+import com.minibcr.commons.PostCrudRepository;
 
 @Service
 public class PostServiceImpl implements PostService {
